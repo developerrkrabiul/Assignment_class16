@@ -63,7 +63,18 @@ a:hover{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	display: none;
+	transition: all 0.3s ease-in-out;
+	opacity: 0;
+	pointer-events: none;
+	transform: translateY(-100px);
+
+}
+
+.fb_modal_sec.modalonoff{
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateY(0px);
+
 }
 
 .fb_modal {
@@ -185,13 +196,13 @@ a:hover{
 	margin: auto;
 	background: #fff;
 	margin-bottom: 10px;
+	border-radius: 10px;
 }
 
 .my_accordion h2 {
 	font-size: 20px;
 	padding: 20px 10px;
 	border-bottom: 1px solid #ddd;
-	margin-bottom: 10px;
 	position: relative;
 	cursor: pointer;
 }
@@ -204,8 +215,17 @@ a:hover{
 	width: 30px;
 	height: 30px;
 	background-size: cover;
+	transition: .5s;
+}
+.my_accordion_header.active h2::after {
+	transform: rotate(-180deg);
 }
 
+.my_accordion_body{
+	height: 0;
+	overflow: hidden;
+	transition: .3s;
+}
 .my_accordion_body p {
-	padding: 0 10px 10px 10px;
+	padding: 10px;
 }
